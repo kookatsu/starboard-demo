@@ -2,7 +2,7 @@
 //---------------------------------------------------*
 // 共通定数
 //---------------------------------------------------*
-//株式会社カスミ
+//株式会社ハイデイ日高
 
 //動作環境(0:Heroku環境 1:fujimoto Windows環境)
 $ENV_MODE = 0;
@@ -21,6 +21,6 @@ $Const_DB_SCHEMA = "salesforce.";
 $Const_LOGIN_PHP = "fjptlksm.php";
 
 //Salesforce
-$Const_HQ_NAME = "株式会社カスミ";
+$Const_HQ_NAME = "株式会社ハイデイ日高";
 
 ?>
