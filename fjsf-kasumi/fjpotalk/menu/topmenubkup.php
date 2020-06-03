@@ -1021,17 +1021,11 @@
 <!--右サイドバー-->
 <div class="mybox_sidebar">
 <div class="mybox_title">▼twitter</div>
-  <div class="mybox">
-<!--<img src="..//img/mybox/twitter.jpg" width="300" height="200">
--->
-<a href="https://twitter.com/intent/tweet?button_hashtag=日高屋&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">Tweet #日高屋</a>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-</div>
+  <div class="mybox"><img src="..//img/mybox/twitter.jpg" width="300" height="200"></div>
   
   <div class="mybox_title">▼今の様子</div>
   <div class="mybox"><!--<img src="../img/mybox/camera.jpg" width="300" height="200">-->
-  <iframe width="300" height="200" src="https://www.youtube.com/watch?v=hmtqztrfvE4?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  <iframe width="300" height="200" src="https://www.youtube.com/embed/OBsmLKuNELA?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   
   <div class="mybox_title">
     ?Mybox設定
