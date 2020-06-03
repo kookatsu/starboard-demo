@@ -1024,8 +1024,7 @@
   <div class="mybox">
 <!--<img src="..//img/mybox/twitter.jpg" width="300" height="200">
 -->
-<a href="https://twitter.com/intent/tweet?button_hashtag=日高屋&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">Tweet #日高屋</a>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a class="twitter-timeline" href="https://twitter.com/hidakaya_tweet?ref_src=twsrc%5Etfw">Tweets by hidakaya_tweet</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>>
 
 </div>
   
