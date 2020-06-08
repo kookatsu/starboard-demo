@@ -342,6 +342,8 @@ global $this_pg;
 					<td width="60"  align="center"  rowspan="2"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(7);return false">機器番号</a></td>
 					<td width="110" align="center"  rowspan="2"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(5);return false">ステータス</a></td>
 					<td width="130" align="center"  rowspan="2"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(6);return false">完了理由</a></td>
+					<td width="180" align="center"  rowspan="2">問合せ内容</td>
+					<td width="180" align="center"  rowspan="2">対応内容</td>
 				</tr>
 				<tr height="20" bgcolor=<? print $GRID_TITLE_BGCOLOR2 ?> >
 					<td width="240"><select name="combostorecode" onChange="MyCodeClick()" onkeydown=EnterToTab(event) ><?php SetStoreCombo( $_POST["combostorecode"] ); ?></select></td>
@@ -520,6 +522,8 @@ global $this_pg;
 						<td width="60 " align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $machine ?></td>
 						<td width="110" align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $status ?></td>
 						<td width="130" align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $taiou ?></td>
+						<td width="180" align="left"  valign="top"  bgcolor=<?=$bkcolor_base?>>&nbsp;<?= nl2br($description) ?></td><!-- //ADD 2019-06-10 -->
+						<td width="180" align="left"  valign="top"  bgcolor=<?=$bkcolor_base?>>&nbsp;<?= nl2br($lastreport) ?></td><!-- //ADD 2019-06-10 -->
 					</tr>
 <?
 				}
