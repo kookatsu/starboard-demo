@@ -316,7 +316,7 @@ global $this_pg;
 		</tr>
 	</table>
 
-	<hr width="1060">
+	<hr width="1220">
 
 
 
