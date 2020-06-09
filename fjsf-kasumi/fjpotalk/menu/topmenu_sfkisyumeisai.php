@@ -120,9 +120,9 @@
 		<!-- 外側(Header)のTable Start -->
 		<table width="1060"><tr><td valign="top">
 			<!-- 内側のTable Start -->
-			<DIV style="width:1220px; overflow:auto;">	
+			<DIV style="width:1060px; overflow:auto;">	
 			<!--見出し Start-->
-			<table id="tblList1" width="1220" border="0" cellpadding="0" cellspacing="1" bgcolor="#999999"  style="font-size:9pt;">
+			<table id="tblList1" width="2000" border="0" cellpadding="0" cellspacing="1" bgcolor="#999999"  style="font-size:9pt;">
 				<tr height="20" bgcolor=<? print $GRID_TITLE_BGCOLOR2 ?> >
 					<td width="40"  align="center"><font color=<? print $GRID_TITLE_FTCOLOR ?>>No</td>
 					<td width="160"  align="center"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(1);return false">日時</a></td>
@@ -133,8 +133,6 @@
 					<td width="60"  align="center"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(7);return false">機器番号</a></td>
 					<td width="110" align="center"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(5);return false">ステータス</a></td>
 					<td width="130" align="center"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(6);return false">完了理由</a></td>
-					<td width="180" align="center">問合せ内容</td>
-					<td width="180" align="center">対応内容</td>
 				</tr>
 				<!--見出し End-->
 				<!-- 明細 Start -->

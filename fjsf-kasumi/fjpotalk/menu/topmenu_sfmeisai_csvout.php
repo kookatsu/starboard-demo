@@ -50,7 +50,7 @@
 	$csvHead = $csvHead .  "機種" . "\",\"";
 	$csvHead = $csvHead .  "機器番号" . "\",\"";
 	$csvHead = $csvHead .  "ステータス" . "\",\"";
-	$csvHead = $csvHead .  "完了理由";
+	$csvHead = $csvHead .  "完了理由" . "\",\"";
 	$csvHead = $csvHead .  "問合せ内容" . "\",\"";
 	$csvHead = $csvHead .  "対応内容" . "\",\"";
 	$csvHead = $csvHead . "\"\n";
