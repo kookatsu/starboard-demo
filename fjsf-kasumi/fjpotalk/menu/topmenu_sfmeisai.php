@@ -329,7 +329,7 @@ global $this_pg;
 		<!-- 外側(Header)のTable Start -->
 		<table width="1060"><tr><td valign="top">
 			<!-- 内側のTable Start -->
-			<DIV style="width:1220px; overflow:auto;">	
+			<DIV style="width:2000px; overflow:auto;">	
 			<!--見出し Start-->
 			<table id="tblList1"border="0" cellpadding="0" cellspacing="1" bgcolor="#999999"  style="font-size:9pt;">
 				<tr height="20" bgcolor=<? print $GRID_TITLE_BGCOLOR2 ?> >
