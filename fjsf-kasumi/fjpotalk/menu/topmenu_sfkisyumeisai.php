@@ -196,6 +196,8 @@
 						$machine = mb_convert_encoding( $rs['machinenumber__c'], $MOJI_NEW,$MOJI_ORG); //文字コード変換;
 						$status =mb_convert_encoding( $rs['status'], $MOJI_NEW,$MOJI_ORG); //文字コード変換;
 						$taiou =mb_convert_encoding( $rs['closereson__c'], $MOJI_NEW,$MOJI_ORG); //文字コード変換;
+						$description = $rs['description'];  //ADD 2019-06-10
+						$lastreport = $rs['lastreport__c']; //ADD 2019-06-10
 					}else{
 						$storename = $rs['shopname__c'];
 						$naiyou = $rs['inquirycategory3__c'];
@@ -203,6 +205,8 @@
 						$machine = $rs['machinenumber__c'];
 						$status =$rs['status'];
 						$taiou =$rs['closereson__c'];
+						$description = $rs['description'];  //ADD 2019-06-10
+						$lastreport = $rs['lastreport__c']; //ADD 2019-06-10
 					}
 ?>
 					<tr height="20" bgcolor="#FFFFFF" >
@@ -215,6 +219,8 @@
 						<td width="60"  align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $machine ?></td>
 						<td width="110" align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $status ?></td>
 						<td width="130" align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $taiou ?></td>
+						<td width="110" align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $description ?></td>
+						<td width="130" align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $lastreport ?></td>
 					</tr>
 <?
 				}
