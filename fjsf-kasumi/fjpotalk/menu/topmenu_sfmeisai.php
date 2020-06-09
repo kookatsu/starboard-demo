@@ -329,23 +329,25 @@ global $this_pg;
 		<!-- 外側(Header)のTable Start -->
 		<table width="1060"><tr><td valign="top">
 			<!-- 内側のTable Start -->
-			<DIV style="width:1060px; overflow:auto;">	
+			<DIV style="width:1220px; overflow:auto;">	
 			<!--見出し Start-->
-			<table id="tblList1" width="1060" border="0" cellpadding="0" cellspacing="1" bgcolor="#999999"  style="font-size:9pt;">
+			<table id="tblList1"border="0" cellpadding="0" cellspacing="1" bgcolor="#999999"  style="font-size:9pt;">
 				<tr height="20" bgcolor=<? print $GRID_TITLE_BGCOLOR2 ?> >
-					<td width="40"  align="center" rowspan="2"><font color=<? print $GRID_TITLE_FTCOLOR ?>>No</td>
-					<td width="160" align="center" rowspan="2"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(1);return false">日時</a></td>
-					<td width="240" align="center"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(2);return false">店舗名</a></td>
-					<td width="70"  align="center" rowspan="2"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(0);return false">No</a></td>
-					<td width="70"  align="center" rowspan="2"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(3);return false">内容</a></td>
-					<td width="180" align="center"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(4);return false">機種</a></td>
+					<td width="30"  align="center"  rowspan="2"><font color=<? print $GRID_TITLE_FTCOLOR ?>>No</td>
+					<td width="90"  align="center"  rowspan="2"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(1);return false">日時</a></td>
+					<td width="210" align="center"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(2);return false">店舗名</a></td>
+					<td width="60"  align="center"  rowspan="2"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(0);return false">No</a></td>
+					<td width="60"  align="center"  rowspan="2"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(3);return false">内容</a></td>
+					<td width="160" align="center"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(4);return false">機種</a></td>
 					<td width="60"  align="center"  rowspan="2"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(7);return false">機器番号</a></td>
-					<td width="110" align="center"  rowspan="2"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(5);return false">ステータス</a></td>
-					<td width="130" align="center"  rowspan="2"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(6);return false">完了理由</a></td>
+					<td width="90"  align="center"  rowspan="2"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(5);return false">ステータス</a></td>
+					<td width="100" align="center"  rowspan="2"><font color=<? print $GRID_TITLE_FTCOLOR ?>><a href="javascript:void(0)" target="" Onclick="MySortClick(6);return false">完了理由</a></td>
+					<td width="180" align="center"  rowspan="2">問合せ内容</td>
+					<td width="180" align="center"  rowspan="2">対応内容</td>
 				</tr>
 				<tr height="20" bgcolor=<? print $GRID_TITLE_BGCOLOR2 ?> >
-					<td width="240"><select name="combostorecode" onChange="MyCodeClick()" onkeydown=EnterToTab(event) ><?php SetStoreCombo( $_POST["combostorecode"] ); ?></select></td>
-					<td width="180"><select name="combohardcode" onChange="MyCodeClick()" onkeydown=EnterToTab(event) ><?php SetHardCombo( $_POST["combohardcode"] ); ?></select></td>
+					<td width="210"><select name="combostorecode" onChange="MyCodeClick()" onkeydown=EnterToTab(event) style="width:210px;"><?php SetStoreCombo( $_POST["combostorecode"] ); ?></select></td>
+					<td width="160"><select name="combohardcode"  onChange="MyCodeClick()" onkeydown=EnterToTab(event) style="width:160px;"><?php SetHardCombo( $_POST["combohardcode"] ); ?></select></td>
 				</tr>
 				<!--見出し End-->
 				<!-- 明細 Start -->
@@ -487,12 +489,18 @@ global $this_pg;
 					$wRecCnt = $wRecCnt + 1;
 
 
-					$bkcolor_base = $GRID_MEISAI_COLOR1;
-
+//					$bkcolor_base = $GRID_MEISAI_COLOR1; //DEL 2019-06-10
+					//1行おきに色(基本の背景色) ADD 2019-06-10
+					if( $wRecCnt%2 == 0 ){
+						$bkcolor_base = $GRID_MEISAI_COLOR2;//グレー
+					}else{
+						$bkcolor_base = $GRID_MEISAI_COLOR1;//白
+					}
+				
 
 					$receiotdatetime__c = date("Y-m-d H:i:s",strtotime($rs["receiotdatetime__c"] . "+9 hour")); //ここで9時間足す
-//					$createdateYMD = substr($receiotdatetime__c,0,10);
-//					$createdateHNS = substr($receiotdatetime__c,11);
+ 					$createdateYMD = substr($receiotdatetime__c,0,10);
+					$createdateHNS = substr($receiotdatetime__c,11);
 
 					if($ENV_MODE == 1){
 						$storename = mb_convert_encoding( $rs['shopname__c'], $MOJI_NEW,$MOJI_ORG); //文字コード変換;
@@ -501,6 +509,8 @@ global $this_pg;
 						$machine = mb_convert_encoding( $rs['machinenumber__c'], $MOJI_NEW,$MOJI_ORG); //文字コード変換;
 						$status =mb_convert_encoding( $rs['status'], $MOJI_NEW,$MOJI_ORG); //文字コード変換;
 						$taiou =mb_convert_encoding( $rs['closereson__c'], $MOJI_NEW,$MOJI_ORG); //文字コード変換;
+						$description = mb_convert_encoding( $rs['description'], $MOJI_NEW,$MOJI_ORG); //文字コード変換;  //ADD 2019-06-10
+						$lastreport = mb_convert_encoding( $rs['lastreport__c'], $MOJI_NEW,$MOJI_ORG); //文字コード変換; //ADD 2019-06-10
 					}else{
 						$storename = $rs['shopname__c'];
 						$naiyou = $rs['inquirycategory3__c'];
@@ -508,18 +518,22 @@ global $this_pg;
 						$machine = $rs['machinenumber__c'];
 						$status =$rs['status'];
 						$taiou =$rs['closereson__c'];
+						$description = $rs['description'];  //ADD 2019-06-10
+						$lastreport = $rs['lastreport__c']; //ADD 2019-06-10
 					}
 ?>
 					<tr height="20" bgcolor="#FFFFFF" >
-						<td width="40"  align="center" bgcolor=<?=$bkcolor_base?>><?= $wRecCnt ?></td>
-						<td width="160"  align="center" bgcolor=<?=$bkcolor_base?>><?= $receiotdatetime__c ?></td>
+						<td width="30"  align="center" bgcolor=<?=$bkcolor_base?>><?= $wRecCnt ?></td>
+						<td width="90"  align="center" bgcolor=<?=$bkcolor_base?>><?= $createdateYMD ?><br><?= $createdateHNS ?></td>
 						<td width="210" align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $storename ?></td>
-						<td width="70"  align="center" bgcolor=<?=$bkcolor_base?>><a href="javascript:void(0)" target=<?=$rs["casenumber"]?> onClick="MyListOpen(this.target);return false"><?=$rs["casenumber"]?></a></td>
-						<td width="70"  align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $naiyou ?></td>
-						<td width="180" align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $kisyu ?></td>
+						<td width="60"  align="center" bgcolor=<?=$bkcolor_base?>><a href="javascript:void(0)" target=<?=$rs["casenumber"]?> onClick="MyListOpen(this.target);return false"><?=$rs["casenumber"]?></a></td>
+						<td width="60"  align="center" bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $naiyou ?></td>
+						<td width="160" align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $kisyu ?></td>
 						<td width="60 " align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $machine ?></td>
-						<td width="110" align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $status ?></td>
-						<td width="130" align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $taiou ?></td>
+						<td width="90"  align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $status ?></td>
+						<td width="100" align="left"   bgcolor=<?=$bkcolor_base?>>&nbsp;<?= $taiou ?></td>
+						<td width="180" align="left"  valign="top"  bgcolor=<?=$bkcolor_base?>>&nbsp;<?= nl2br($description) ?></td><!-- //ADD 2019-06-10 -->
+						<td width="180" align="left"  valign="top"  bgcolor=<?=$bkcolor_base?>>&nbsp;<?= nl2br($lastreport) ?></td><!-- //ADD 2019-06-10 -->
 					</tr>
 <?
 				}
