@@ -50,7 +50,9 @@
 	$csvHead = $csvHead .  "機種" . "\",\"";
 	$csvHead = $csvHead .  "機器番号" . "\",\"";
 	$csvHead = $csvHead .  "ステータス" . "\",\"";
-	$csvHead = $csvHead .  "完了理由";
+	$csvHead = $csvHead .  "完了理由" . "\",\"";
+	$csvHead = $csvHead .  "問合せ内容" . "\",\"";
+	$csvHead = $csvHead .  "対応内容" . "\",\"";
 	$csvHead = $csvHead . "\"\n";
 
 	//ヘッダの出力
@@ -116,6 +118,8 @@
 			$machine = mb_convert_encoding( $rs['machinenumber__c'], $MOJI_NEW,$MOJI_ORG); //文字コード変換;
 			$status =mb_convert_encoding( $rs['status'], $MOJI_NEW,$MOJI_ORG); //文字コード変換;
 			$taiou =mb_convert_encoding( $rs['closereson__c'], $MOJI_NEW,$MOJI_ORG); //文字コード変換;
+			$description = mb_convert_encoding( $rs['description'], $MOJI_NEW,$MOJI_ORG); //文字コード変換;  //ADD 2019-06-10
+			$lastreport = mb_convert_encoding( $rs['lastreport__c'], $MOJI_NEW,$MOJI_ORG); //文字コード変換; //ADD 2019-06-10
 		}else{
 			$storename = $rs['shopname__c'];
 			$naiyou = $rs['inquirycategory3__c'];
@@ -123,6 +127,8 @@
 			$machine = $rs['machinenumber__c'];
 			$status =$rs['status'];
 			$taiou =$rs['closereson__c'];
+			$description = $rs['description'];  //ADD 2019-06-10
+			$lastreport = $rs['lastreport__c']; //ADD 2019-06-10
 		}
 
 
@@ -135,7 +141,9 @@
                          . $kisyu . "\",\"" 
                          . $machine . "\",\"" 
                          . $status . "\",\"" 
-                         . $taiou . "\"\n";
+                         . $taiou . "\",\"" 
+                         . $description . "\",\"" 
+                         . $lastreport . "\"\n";
 		print $contents;
 
 	}
